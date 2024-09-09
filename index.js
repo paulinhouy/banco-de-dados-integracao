@@ -13,7 +13,7 @@ app.use(express.json());
 // Rota para exibir categorias como HTML
 app.get('/categorias', async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM Categorias');
+    const result = await pool.query('SELECT * FROM Produtos ');
     res.render('categorias', { categorias: result.rows });
   } catch (err) {
     console.error('Erro ao consultar categorias', err);
